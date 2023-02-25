@@ -14,17 +14,24 @@ class SalaryController(
 
         if ((name != null) && (salary != null)){
 
-            val isss = salary * 0.03
-            val afp = salary * 0.04
-            val renta = salary * 0.05
-            val deductions = isss + afp + renta
-            val netSalary = salary - deductions
+           if (salary < 0){
+               SalaryView.OnExcepcion("El salario no puede ser negativo")
+           } else {
+               val isss = salary * 0.03
+               val afp = salary * 0.04
+               val renta = salary * 0.05
+               val deductions = isss + afp + renta
+               val netSalary = salary - deductions
 
-            response = netSalary.toString()
+               response = netSalary.toString()
 
-            SalaryView.OnActionSuccess("Su salario neto menos reduccion es $response")
+               SalaryView.OnActionSuccess("Su salario neto menos reduccion es $response")
+           }
 
 
+
+        } else {
+            SalaryView.OnExcepcion("Los campos estan vacios")
         }
     }
 }

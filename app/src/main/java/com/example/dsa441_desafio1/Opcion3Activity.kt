@@ -51,7 +51,7 @@ class Opcion3Activity : AppCompatActivity(), ICalculatorView {
     }
 
     override fun OnExcepcion(message: String?) {
-        TODO("Not yet implemented")
+        txtResponse?.text=message
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

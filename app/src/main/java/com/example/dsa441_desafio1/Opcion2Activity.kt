@@ -52,7 +52,7 @@ class Opcion2Activity : AppCompatActivity(), ISalaryView {
     }
 
     override fun OnExcepcion(message: String?) {
-        TODO("Not yet implemented")
+        txtResult?.text=message
     }
 
 
